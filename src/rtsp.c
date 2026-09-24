@@ -1752,8 +1752,12 @@ static void rtsp_append_x_nat_header(const rtsp_session_t *session, char *buf, s
  */
 static void rtsp_build_setup_transport(const rtsp_session_t *session, char *buf, size_t size, size_t *len,
                                        int offer_tcp, int offer_udp, int rtp_port, int rtcp_port) {
-  static const char *const tcp_profiles[] = {"MP2T/RTP/TCP", "MP2T/TCP", "RTP/AVP/TCP"};
-  static const char *const udp_profiles[] = {"MP2T/RTP/UDP", "MP2T/UDP", "RTP/AVP"};
+  static const char *const tcp_profiles[] = {"RTP/AVP/TCP"};
+  static const char *const udp_profiles[] = {"RTP/AVP"};
+
+  //static const char *const tcp_profiles[] = {"RTP/AVP/TCP", "MP2T/RTP/TCP", "MP2T/TCP"};
+  ////static const char *const udp_profiles[] = {"RTP/AVP", "MP2T/RTP/UDP", "MP2T/UDP"};
+
   char udp_address[sizeof("client_address=;") + INET6_ADDRSTRLEN] = "";
   const char *udp_mode = "";
   const char *separator = "";

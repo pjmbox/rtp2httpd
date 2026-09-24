@@ -8,7 +8,7 @@ import { defineConfig } from "vite";
 export default defineConfig(({ mode }) => {
   const isDev = mode === "development";
   return {
-    base: "./",
+    base: "/rtp2httpd",
     plugins: [react(), tailwindcss()],
     define: {
       "process.env.NODE_ENV": JSON.stringify(mode),
